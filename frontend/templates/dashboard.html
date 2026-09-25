@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · PocketSmart AI{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="section-head"><p class="eyebrow">YOUR SPACE</p><h1 id="welcome">Dashboard</h1><p>Review your saved recommendation plans.</p></div>
+  <div id="stats" class="stats"></div>
+  <div id="history" class="history"></div>
+</section>
+{% endblock %}
+{% block scripts %}<script>loadDashboard();</script>{% endblock %}

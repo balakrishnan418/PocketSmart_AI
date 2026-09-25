@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}PocketSmart AI{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">SMART BUDGET • AI RECOMMENDATIONS</p>
+    <h1>Plan smarter.<br><span>Spend with purpose.</span></h1>
+    <p class="lead">PocketSmart AI turns your budget and preferences into practical plans for home interiors, parties, and jewelry.</p>
+    <div class="actions">
+      <a class="btn primary" href="/planner/home">Start planning</a>
+      <a class="btn ghost" href="/register">Create account</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-label">YOUR BUDGET</div>
+    <div class="big">₹25,000</div>
+    <div class="bar"><i style="width:72%"></i></div>
+    <div class="split"><span>Planned</span><b>₹18,000</b></div>
+    <div class="split"><span>Reserve</span><b>₹7,000</b></div>
+    <p class="success">● Within your target</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><p class="eyebrow">THREE PLANNERS</p><h2>One assistant for everyday decisions.</h2></div>
+  <div class="cards">
+    <a class="card" href="/planner/home"><div class="icon">⌂</div><h3>Home Interior</h3><p>Allocate a home budget across furniture, lighting, decor and more.</p></a>
+    <a class="card" href="/planner/party"><div class="icon">✦</div><h3>Party Planner</h3><p>Balance food, venue, decoration and a reserve for your event.</p></a>
+    <a class="card" href="/planner/jewelry"><div class="icon">◇</div><h3>Jewelry Planner</h3><p>Get occasion and style-aware jewelry ideas, with optional outfit image analysis.</p></a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{{ planner|capitalize }} Planner · PocketSmart AI{% endblock %}
+{% block content %}
+<section class="planner">
+  <div class="planner-head">
+    <p class="eyebrow">POCKETSMART AI</p>
+    <h1>{% if planner=="home" %}Home Interior Planner{% elif planner=="party" %}Party Budget Planner{% else %}Jewelry Budget Planner{% endif %}</h1>
+    <p>{% if planner=="home" %}Tell us your rooms, style and budget.{% elif planner=="party" %}Set your event budget and guest count.{% else %}Describe your occasion and style. Add an outfit image if you want image-aware suggestions.{% endif %}</p>
+  </div>
+
+  <form id="plannerForm" class="planner-grid" data-planner="{{ planner }}" {% if planner=="jewelry" %}enctype="multipart/form-data"{% endif %}>
+    <div class="form-card">
+      <label>Budget (₹)<input name="budget" type="number" min="1" step="1" required></label>
+
+      {% if planner=="home" %}
+      <label>Rooms<select name="rooms" multiple required><option>Living Room</option><option>Bedroom</option><option>Kitchen</option><option>Dining Room</option><option>Study Room</option></select></label>
+      <label>Style<select name="style"><option>Modern</option><option>Minimal</option><option>Traditional</option><option>Luxury</option></select></label>
+      <label>Notes<textarea name="notes" placeholder="Quantities, colors, priorities..."></textarea></label>
+      {% elif planner=="party" %}
+      <label>Guests<input name="guests" type="number" min="1" required></label>
+      <label>Event type<select name="event_type"><option>Birthday</option><option>Wedding</option><option>Corporate</option><option>Family Function</option><option>Other</option></select></label>
+      <label>Venue<select name="venue"><option>Home</option><option>Hall</option><option>Outdoor</option><option>Hotel</option></select></label>
+      <label>City<input name="city" placeholder="Optional"></label>
+      <label>Notes<textarea name="notes"></textarea></label>
+      {% else %}
+      <label>Occasion<select name="occasion"><option>Casual</option><option>Birthday</option><option>Wedding</option><option>Festival</option><option>College Event</option></select></label>
+      <label>Style<select name="style"><option>Elegant</option><option>Minimal</option><option>Traditional</option><option>Statement</option></select></label>
+      <label>Outfit color<input name="outfit_color" placeholder="e.g. navy blue"></label>
+      <label>Outfit image<input name="image" type="file" accept="image/*"></label>
+      <label>Notes<textarea name="notes"></textarea></label>
+      {% endif %}
+      <button class="btn primary" type="submit">Generate recommendations</button>
+      <p id="formMsg" class="msg"></p>
+    </div>
+    <div id="result" class="result-card">
+      <div class="empty"><div class="icon">✦</div><h2>Your plan will appear here</h2><p>Submit the form to generate a budget-aware recommendation.</p></div>
+    </div>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}<script>bindPlanner("plannerForm");</script>{% endblock %}
