@@ -16,7 +16,6 @@ class Settings:
     GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
     DEMO_MODE: bool = os.getenv("DEMO_MODE", "false").lower() == "true"
     COOKIE_SECURE: bool = os.getenv("COOKIE_SECURE", "false").lower() == "true"
-    MAX_UPLOAD_MB: int = int(os.getenv("MAX_UPLOAD_MB", "5"))
-
+    MAX_UPLOAD_MB: int = int(os.getenv("MAX_UPLOAD_MB") or "5")
 
 settings = Settings()
