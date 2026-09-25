@@ -2,7 +2,7 @@ import sqlite3
 from pathlib import Path
 from backend.config import settings
 
-DB_PATH = Path("./pocketsmart.db")
+DB_PATH = Path("/tmp/pocketsmart.db")
 
 
 def get_conn():
