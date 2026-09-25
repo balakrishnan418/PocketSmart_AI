@@ -7,7 +7,7 @@ load_dotenv()
 
 @dataclass(frozen=True)
 class Settings:
-    APP_NAME: str = os.getenv("APP_NAME", "PocketSmart AI")
+    APP_NAME: str = os.getenv("APP_NAME") or "PocketSmart AI"
     HOST: str = os.getenv("HOST", "127.0.0.1")
     PORT: int = int(os.getenv("PORT") or "8000")
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./pocketsmart.db")
