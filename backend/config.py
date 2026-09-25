@@ -9,7 +9,7 @@ load_dotenv()
 class Settings:
     APP_NAME: str = os.getenv("APP_NAME", "PocketSmart AI")
     HOST: str = os.getenv("HOST", "127.0.0.1")
-    PORT: int = int(os.getenv("PORT", "8000"))
+    PORT: int = int(os.getenv("PORT") or "8000")
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./pocketsmart.db")
     SECRET_KEY: str = os.getenv("SECRET_KEY", "dev-only-change-me")
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
