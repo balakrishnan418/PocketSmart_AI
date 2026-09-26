@@ -2,6 +2,10 @@
 
 > **AI-powered personal planning assistant built with FastAPI, PostgreSQL and Gemini AI.**
 
+## 🌐 Live Website
+
+👉 **[Open PocketSmart AI] https://pocket-smart-ai-snowy.vercel.app/**
+
 PocketSmart AI is a smart web application designed to help users generate personalized recommendations and plans using Artificial Intelligence.
 
 The application combines a **FastAPI backend**, **Neon PostgreSQL database**, and **Google Gemini AI** to provide an interactive and data-driven user experience.
@@ -403,3 +407,7 @@ If you find this project useful, consider giving the repository a ⭐ on GitHub.
 ## 📄 License
 
 This project is created for learning, development, and portfolio purposes.
+
+## 🌐 Visit the Website
+
+🚀 **[PocketSmart AI – Live Website] https://pocket-smart-ai-snowy.vercel.app/**
