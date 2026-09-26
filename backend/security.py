@@ -47,7 +47,10 @@ def get_current_user(request: Request):
         raise HTTPException(status_code=401, detail="Invalid or expired session")
 
     from backend.database import fetch_one
-    user = fetch_one("SELECT id, name, email, created_at FROM users WHERE id = ?", (user_id,))
+    user = fetch_one(
+    "SELECT id, name, email, created_at FROM users WHERE id = %s",
+    (user_id,)
+    )
     if not user:
         raise HTTPException(status_code=401, detail="User not found")
     return user
